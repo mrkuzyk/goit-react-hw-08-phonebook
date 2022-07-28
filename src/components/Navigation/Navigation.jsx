@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import s from './Navigation.module.css'
+import s from './Navigation.module.css';
+import UserMenu from 'components/UserMenu/UserMenu'; 
 
 const Navigation = () => {
     return (
@@ -28,6 +29,7 @@ const Navigation = () => {
             >
                 Login
             </NavLink>
+            <UserMenu/>
         </nav>
     );
 };

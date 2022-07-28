@@ -17,6 +17,12 @@ const Navigation = () => {
                 Contacts
             </NavLink>
             <NavLink
+                to='/register'
+                // className={({ isActive }) => isActive ? `${s.active} ${s.navLink}` : s.navLink}
+            >
+                Registration
+            </NavLink>
+            <NavLink
                 to='/login'
                 // className={({ isActive }) => isActive ? `${s.active} ${s.navLink}` : s.navLink}
             >

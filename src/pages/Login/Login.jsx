@@ -1,7 +1,12 @@
 import { useState } from "react";
-import s from './Login.module.css'
+import { useDispatch } from "react-redux";
+// import { useLogInMutation } from "redux/contactsSlice";
+import { logIn } from "redux/auth/auth-operation";
+import s from './Login.module.css';
 
 const Login = () => {
+    // const [logIn] = useLogInMutation()
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -25,7 +30,8 @@ const Login = () => {
 
     const handleAddContact = (e) => {
         e.preventDefault();
-        console.log(e);
+        dispatch(logIn({email, password}))
+        // logIn({email, password})
         reset()
     };
 

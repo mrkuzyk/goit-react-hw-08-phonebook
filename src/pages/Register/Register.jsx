@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "redux/auth/auth-operation";
+// import { useRegisterUserMutation } from "redux/contactsSlice";
 import s from './Register.module.css';
 
 const Register = () => {
+    const dispatch = useDispatch();
+    // const [registerUser] = useRegisterUserMutation()
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -30,7 +35,8 @@ const Register = () => {
 
     const handleRegistrationUser = (e) => {
         e.preventDefault();
-        console.log(e);
+        dispatch(register({name, email, password}))
+        // registerUser({name, email, password})
         reset()
     };
 
@@ -80,7 +86,7 @@ const Register = () => {
                     required
                 />
             </label>
-            <button type="submit" className={s.btn}>Login</button>
+            <button type="submit" className={s.btn}>Registration</button>
         </form>
     );
 };

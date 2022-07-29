@@ -22,7 +22,7 @@ const ContactList = ({ onDeleteContact }) => {
                     key={id}
                     id={id}
                     name={name}
-                    phone={phone}
+                    number={phone}
                     onClick={() => handleDeleteContact(id)}
                 />
             )}

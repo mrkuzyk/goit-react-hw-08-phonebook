@@ -1,13 +1,16 @@
 import { useState } from "react";
+// import { useDispatch } from "react-redux";
+// import { addContact } from "redux/contact/contact-operation";
 import { useGetContactsQuery, useAddContactMutation } from "redux/contactsSlice";
 import s from './ContactForm.module.css'
 
 // onSubmit це пропси які приймаються тут
 export default function ContactForm({ onSubmit }) {
+    // const dispatch = useDispatch()
     const { data: contacts} = useGetContactsQuery(); // всі контакти
     const [addContact] = useAddContactMutation(); 
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [number, setNumber] = useState('');
 
     const handleChange = e => {
         const { name, value } = e.currentTarget; // отримую значення в імпуті
@@ -18,8 +21,8 @@ export default function ContactForm({ onSubmit }) {
                 setName(value)
                 break;
             
-            case "phone":
-                setPhone(value);
+            case "number":
+                setNumber(value);
                 break;
         
             default:
@@ -34,7 +37,8 @@ export default function ContactForm({ onSubmit }) {
             if (contacts.some(contact => contact.name === name)) { 
                 return alert(`${name} is already in contacts`); // якщо в контактах є вже таке ім'я то видає помилку 
             };
-            await addContact({ name, phone }) // виконую додавання контакту
+            await addContact({ name, number }) // виконую додавання контакту
+            // await dispatch(addContact({ name, phone }))
             reset(); 
         } catch (error) {
             console.log(error);
@@ -45,7 +49,7 @@ export default function ContactForm({ onSubmit }) {
     const reset = () => {
         // очищую імпути
         setName('');
-        setPhone('');
+        setNumber('');
     };
 
     return (
@@ -65,8 +69,8 @@ export default function ContactForm({ onSubmit }) {
             <label className={s.label}> Number
                 <input
                     type="tel"
-                    name="phone"
-                    value={phone}
+                    name="number"
+                    value={number}
                     onChange={handleChange}
                     className={s.input}
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

@@ -1,33 +1,31 @@
-.nav{
+.nav {
     width: 50%;
-    height: 100%;
 
     display: flex;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-end;
+    text-align: end;
+
+    background-color: rgba(245, 249, 150, 0.932);
 }
 
-.navLink{
+.navLink {
     text-decoration: none;
 
     font-weight: 500;
     font-size: 20px;
-    color: #5e298f;
-
-    width: 100%;
+    color: #0e0534;
 
     padding: 20px;
 
     text-transform: uppercase;
 
-    background-color: rgba(245, 249, 150, 0.932);
 }
 
 .navLink:hover{
     background-color: rgba(127, 195, 240, 0.903);
 }
 
-.active{
+.active {
     color: white;
     background-color: rgba(32, 154, 220, 0.903);
 }

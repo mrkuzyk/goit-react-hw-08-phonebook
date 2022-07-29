@@ -17,12 +17,12 @@ const ContactList = ({ onDeleteContact }) => {
     
     return (
         <ul className={s.list}>
-            {filteredContacts.map(({ id, name, phone }) =>
+            {filteredContacts.map(({ id, name, number }) =>
                 <ContactItem
                     key={id}
                     id={id}
                     name={name}
-                    number={phone}
+                    number={number}
                     onClick={() => handleDeleteContact(id)}
                 />
             )}

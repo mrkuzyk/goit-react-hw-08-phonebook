@@ -3,6 +3,7 @@
     padding-bottom: 25px;
 
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .leftPart{

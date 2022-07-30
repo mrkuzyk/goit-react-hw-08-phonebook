@@ -1,4 +1,4 @@
-import AuthorizationMenu from "AuthorizationMenu/AuthorizationMenu";
+import AuthorizationMenu from "components/AuthorizationMenu/AuthorizationMenu";
 import Navigation from "components/Navigation/Navigation";
 import UserMenu from "components/UserMenu/UserMenu";
 import { useSelector } from 'react-redux';

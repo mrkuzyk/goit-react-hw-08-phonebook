@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from 'react-router-dom';
 // import { useLogInMutation } from "redux/contactsSlice";
 import { logIn } from "redux/auth/auth-operation";
 import s from './Login.module.css';
@@ -30,7 +31,7 @@ const Login = () => {
 
     const handleAddContact = (e) => {
         e.preventDefault();
-        dispatch(logIn({email, password}))
+        dispatch(logIn({ email, password }))
         // logIn({email, password})
         reset()
     };
@@ -43,33 +44,54 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleAddContact} className={s.form}>
-            <label className={s.label}> Email
-                <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={handleChange}
-                    className={s.input}
-                    // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                    required
-                />
-            </label>
-            <label className={s.label}> Password
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={handleChange}
-                    className={s.input}
-                    // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                    // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-                    required
-                />
-            </label>
-            <button type="submit" className={s.btn}>Login</button>
-        </form>
+        <div
+            // className={`container {s.loginContainer{}`}
+            className={`${s.loginContainer} container`}
+        >
+            <div className={s.leftPart}>
+                <form onSubmit={handleAddContact} className={s.form}>
+                    <label className={s.label}>
+                        {/* Email */}
+                        <input
+                            type="email"
+                            name="email"
+                            value={email}
+                            onChange={handleChange}
+                            className={s.input}
+                            placeholder="email"
+                            // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                            required
+                        />
+                    </label>
+                    <label className={s.label}>
+                        {/* Password */}
+                        <input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={handleChange}
+                            className={s.input}
+                            placeholder="password"
+                            // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                            // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                            required
+                        />
+                    </label>
+                    <button type="submit" className={s.btn}>Login</button>
+                </form>
+            </div>
+            <div className={s.rightPart}>
+                <h2 className={s.title}>Not registered?</h2>
+                <NavLink
+                    to='/register'
+                    className={s.navLink}
+                >
+                    Registration
+            </NavLink>
+            </div>
+        </div>
+        
     );
 };
 

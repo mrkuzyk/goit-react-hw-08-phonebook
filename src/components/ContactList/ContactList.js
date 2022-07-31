@@ -7,6 +7,7 @@ import getVisibleContact from "helpers/getVisibleContact";
 
 const ContactList = ({ onDeleteContact }) => {
     const { data: contacts } = useGetContactsQuery(); // всі контакти
+    const totalContacts = contacts?.length;
     const [deleteContact] = useDeleteContactMutation();
     const filter = useSelector(getFilter);
     const filteredContacts = getVisibleContact(filter, contacts);
@@ -16,17 +17,22 @@ const ContactList = ({ onDeleteContact }) => {
     };
     
     return (
-        <ul className={s.list}>
-            {filteredContacts.map(({ id, name, number }) =>
-                <ContactItem
-                    key={id}
-                    id={id}
-                    name={name}
-                    number={number}
-                    onClick={() => handleDeleteContact(id)}
-                />
-            )}
-        </ul>
+        totalContacts >= 1
+            ?
+            <ul className={s.list}>
+                {filteredContacts.map(({ id, name, number }) =>
+                    <ContactItem
+                        key={id}
+                        id={id}
+                        name={name}
+                        number={number}
+                        onClick={() => handleDeleteContact(id)}
+                    />
+                )}
+            </ul>
+            :
+            <p className={s.title}>You have no contacts yet</p>
+            
     );
 };
 

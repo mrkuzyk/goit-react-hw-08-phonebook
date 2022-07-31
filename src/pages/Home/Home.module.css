@@ -1,17 +1,4 @@
-.list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 5px;
-
-    overflow: scroll;
-
-    /* max-height: 100%; */
-    max-height: 100vh;
-}
-
-.title {
+.title{
     font-family: BlinkMacSystemFont,
         'Segoe UI',
         'Roboto',
@@ -23,9 +10,20 @@
         'Helvetica Neue',
         sans-serif;
     font-weight: 300;
-    font-size: 35px;
+    font-size: 50px;
 
-    padding-top: 140px;
+    padding-top: 170px;
 
     text-align: center;
+}
+
+.info{
+    composes: title;
+
+    padding-top: 30px;
+}
+
+.infoAccent{
+    text-decoration: none;
+    color: rgba(7, 78, 116, 0.903);;
 }

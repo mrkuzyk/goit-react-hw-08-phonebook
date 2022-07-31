@@ -1,0 +1,35 @@
+.box{
+    position: relative;
+    z-index: 1;
+    /* background-color: rgba(32, 154, 220, 0.903); */
+    /* background-color: rgba(245, 249, 150, 0.932); */
+    margin-top: 15px;
+    padding: 20px 45px;
+    text-align: center;
+
+    /* background-color: aqua; */
+}
+
+.title{
+    font-family: BlinkMacSystemFont,
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        sans-serif;;
+    font-weight: 400;
+    font-size: 20px;
+    
+    border: 1px solid;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /* background-color: aquamarine; */
+
+    text-transform: uppercase;
+}

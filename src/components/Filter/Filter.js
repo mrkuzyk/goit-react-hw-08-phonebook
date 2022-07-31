@@ -12,14 +12,17 @@ const Filter = () => {
     };
     
     return (
-        <label className={s.label}> Find contacts by name
-            <input
-                type="text"
-                value={filter}
-                onChange={searchFilter}
-                className={s.input}
-            />
-        </label>
+        <div className={s.filterBox}>
+            <label className={s.label}> Find contacts by name
+                <input
+                    type="text"
+                    value={filter}
+                    onChange={searchFilter}
+                    className={s.input}
+                    placeholder="enter name"
+                />
+            </label>
+        </div>
     );
 };
 

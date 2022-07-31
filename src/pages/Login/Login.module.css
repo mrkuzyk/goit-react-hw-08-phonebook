@@ -34,7 +34,7 @@
         'Helvetica Neue',
         sans-serif;
     outline: 0;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     background-color: #f2f2f2;
     width: 100%;
     border: 0;
@@ -55,6 +55,8 @@
         'Droid Sans',
         'Helvetica Neue',
         sans-serif;
+    font-weight: 500;
+    font-size: 18px;
 
     text-transform: uppercase;
     outline: 0;
@@ -63,10 +65,11 @@
     border: 0;
     margin: 0 0 15px;
     padding: 15px;
-    color: #5e298f;
+    /* color: #5e298f; */
+    color: rgba(7, 78, 116, 0.903);
     background-color: rgba(245, 249, 150, 0.932);
         /* background-color: rgba(32, 154, 220, 0.903); */
-    font-size: 14px;
+    /* font-size: 14px; */
     transition: all 0.3 ease;
     cursor: pointer;
 }

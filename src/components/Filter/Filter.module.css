@@ -1,11 +1,52 @@
-.label{
-    width: 75%;
-    padding: 10px;
+.filterBox{
+    position: relative;
+    z-index: 1;
+    /* background-color: rgba(32, 154, 220, 0.903); */
+    /* background-color: rgba(245, 249, 150, 0.932); */
+    margin-top: 15px;
+    padding: 45px;
+    text-align: center;
+}
 
-    display: flex;
-    flex-direction: column;
+.label{
+    font-family: BlinkMacSystemFont,
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        sans-serif;;
+    font-weight: 400;
+    font-size: 20px;
+
+    text-transform: uppercase;
 }
 
 .input{
-    margin-top: 15px;
+    font-family: BlinkMacSystemFont,
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        sans-serif;
+    outline: 0;
+    /* text-transform: uppercase; */
+    /* background-color: rgba(128, 128, 128, 0.564); */
+    background-color: rgba(245, 249, 150, 0.932);
+    /* background-color: transparent; */
+    width: 100%;
+    border: 0;
+    margin: 15px 0;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid rgba(7, 78, 116, 0.903);
+    /* box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.564); */
+    font-size: 14px;
 }

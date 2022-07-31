@@ -5,7 +5,7 @@ axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
     set(token) {
-        axios.defaults.headers.common.Authorization = `Bearee ${token} `;
+        axios.defaults.headers.common.Authorization = `Bearer ${token} `;
     },
     unset() {
         axios.defaults.headers.common.Authorization = '';
@@ -56,7 +56,7 @@ export const getCurrentUser = createAsyncThunk('/auth/refresh', async (_ , thunk
     token.set(persistedToken);
     try {
         const { data } = await axios.get('/users/current');
-        console.log('data', data)
+        // console.log('data', data)
         return data;
     } catch (error) {
         return console.log(error);

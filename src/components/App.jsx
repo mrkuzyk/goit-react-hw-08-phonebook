@@ -15,10 +15,10 @@ import { getCurrentUser } from "redux/auth/auth-operation";
 import PrivateRout from "./PrivateRout/PrivateRout";
 import PublicRout from "./PublicRout/PublicRout";
 
-const Home = lazy(()=> import ('./Hallo'));
+const Home = lazy(()=> import ('pages/Home/Home'));
 const Contacts = lazy(()=> import ('pages/Contacts/Contacts'));
 const Register = lazy(()=> import ('pages/Register/Register'));
-const Login = lazy(()=> import ('pages/Login/Login'));
+const Login = lazy(() => import('pages/Login/Login'));
 
 export function App() {
   const dispatch = useDispatch();
